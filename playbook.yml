@@ -10,4 +10,17 @@
       name: httpd
       state: started
       enabled: yes
-      
+
+  - name: Install unzip
+    yum:
+      name: unzip
+      state: latest    
+
+  - name: Unarchive a file that needs to be downloaded (added in 2.0)
+    unarchive:
+      src: https://www.free-css.com/assets/files/free-css-templates/download/page1/photoprowess.zip
+      dest: /tmp/
+      remote_src: yes
+
+
+    
